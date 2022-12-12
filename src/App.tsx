@@ -11,7 +11,7 @@ import socketIO from 'socket.io-client';
 import { asyncGetCryptAlgoList } from './store/slice/cryptAlgoListSlice';
 
 
-const socket = socketIO('http://localhost:3030');
+const socket = socketIO('http://0.0.0.0:3030');
 
 function App() {
   const dispatch: AppDispatch = useDispatch();

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const ApiPrefix = 'http://127.0.0.1:8081';
+const ApiPrefix = 'http://0.0.0.0:8081';
 
 export const getCryptAlgoList = async () => {
     const list = await axios.request({
