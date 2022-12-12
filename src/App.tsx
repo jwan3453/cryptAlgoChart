@@ -1,32 +1,28 @@
 import React, { useEffect }  from 'react';
 
 import { AppDispatch, RootState } from './store'
-import { setUser } from './store/slice/chartDataSlice';
+import { setChartData } from './store/slice/chartDataSlice';
 import { useDispatch, useSelector } from 'react-redux';
 
 import './App.css';
 import Chart from './components/cryptChart/cryptChart';
 import socketIO from 'socket.io-client';
 
+import { asyncGetCryptAlgoList } from './store/slice/cryptAlgoListSlice';
+
+
 const socket = socketIO('http://localhost:3030');
 
 function App() {
   const dispatch: AppDispatch = useDispatch();
   
-  // const sendSocketMessage = () => {
-  //   socket.emit('message', {
-  //     text: 'jacky wang',
-  //     socketID: socket.id,
-  //   });
-  // }
-
   useEffect(() => {
+    // 获取列表
+    dispatch(asyncGetCryptAlgoList());
     socket.on('message', (e) => {
-      console.log('客户端收到消息', e);
-      dispatch(setUser({ time: parseInt(e) }))
+      dispatch(setChartData(e as string))
     });
     return () => {
-      console.log('useEffect return called');
       socket.disconnect();
     }
   }, [])

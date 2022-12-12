@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { reducer as chartDataReducer } from './slice/chartDataSlice'
+import { reducer as cryptAlgoListReducer} from './slice/cryptAlgoListSlice'
 
 const store = configureStore({
     reducer: {
-        chartData: chartDataReducer
+        chartData: chartDataReducer,
+        cryptAlgoListData: cryptAlgoListReducer
     }
 })
 
