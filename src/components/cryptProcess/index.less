@@ -1,0 +1,214 @@
+.cryptProcess {
+    // border:1px solid red;
+    margin-left: 50%
+}
+
+// .cryptProcess div{
+//     opacity: 0;
+// }
+
+.cryptProcess:span {
+    display: inline-block;
+}
+
+.keygen {
+    width:80px;
+    margin-left:20px;
+    font-size: 18px;
+    font-weight: 400;
+    animation: fadein 2s ease 0s 1 forwards;
+}
+.doubleArrow {
+    display:flex;
+    flex-direction: row;
+    margin:15px 0 15px 50px;
+    align-items: center;
+
+}
+.doubleArrow div:nth-child(3){
+    text-align: center;
+    line-height: 20px;
+    height:20px;
+    margin-left:10px;
+}
+
+.upArrow {
+    opacity: 0;
+    position:relative;
+    height: 100px;
+    width:5px;
+    background-color:  #ff4f97;
+    animation: fadein 2s ease 0s 1 forwards;
+}
+
+.upArrow:before {
+    content: '';
+    width: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid #ff4f97;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    position: absolute;
+    right: -8px;
+    top:-15px;
+}
+
+.downArrow {
+    opacity: 0;
+    position:relative;
+    height: 100px;
+    width:5px;
+    background-color:  #ff4f97;
+    margin:-8px 0 0 15px;
+    // animation: fadein 8s infinite;
+    animation: fadein 2s ease 4s 1 forwards;
+}
+
+.downArrow:before {
+    content: '';
+    width: 0;
+    border-top: 10px solid #ff4f97;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    position: absolute;
+    right: -8px;
+    top: 95px;   
+}
+.skAndPk{
+    opacity: 0;
+    animation: fadein 2s ease 4s 1 forwards;
+}
+
+.sendPk {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.alice {
+    width:60px;
+    margin-left: 30px;
+    font-size: 16px;
+    animation: fadein 2s ease 0s 1 forwards;
+}
+
+.horizenArrowRight{
+    opacity: 0;    
+    position:relative;
+    height: 5px;
+    width:100px;
+    background-color:  #ff4f97;
+    animation: fadein 2s ease 6s 1 forwards;
+        // display: inline-block;
+}
+.horizenArrowRight:before {
+    content: '';
+    width: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid #ff4f97;
+    border-right: 10px solid transparent;
+    position: absolute;
+    left: 95px;
+    top:-7px;
+}
+
+.publicKey {
+    opacity: 0;
+    position: absolute;
+    width: 40px;
+    left: 125px;
+    top:-15px;
+    animation: fadein 2s ease 6s 1 forwards;
+}
+
+.bob {
+    opacity: 0;
+    width: 60px;
+    animation: fadein 2s ease 8s 1 forwards;
+
+}
+.encrypt {
+    // border:1px solid red;
+    display: flex;
+}
+.cypherText {   
+    opacity: 0;
+    width:60px;
+    margin: 100px 0 0 20px;
+    animation: fadein 2s ease 12s 1 forwards;
+}
+.horizenArrowLeft {
+    opacity: 0;
+    position:relative;
+    height: 5px;
+    width:100px;
+    background-color:  #ff4f97;
+    margin: 110px 0 0 10px;
+    animation: fadein 2s ease 10s 1 forwards;
+}
+.horizenArrowLeft:before {
+    content: '';
+    width: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-right: 10px solid #ff4f97;
+    position: absolute;
+    left: -15px;
+    top:-7px;
+}
+
+.verticalLine{
+    opacity: 0;    
+    width: 5px;
+    height: 100px;
+    background-color:  #ff4f97;
+    margin: 5px 0 0 20px;
+    animation: fadein 2s ease 10s 1 forwards;
+}
+
+.encryptEqua {
+    opacity: 0;
+    margin: 45px 0 0 5px;
+    animation: fadein 2s ease 10s 1 forwards;
+}
+.decrypt {
+    margin: 20px 0 0 35px;
+    display: flex;
+    position: relative;
+    height: 120px;
+}
+
+.decryDownArrow {
+    animation: fadein 2s ease 14s 1 forwards!important;
+}
+
+.decryptEqua {
+    opacity: 0;    
+    margin: 35px 0 0 5px;
+    animation: fadein 2s ease 14s 1 forwards!important;
+}
+.message {
+    opacity: 0;
+    position: absolute;
+    top:110px;
+    left:-10px;
+  animation: fadein 2s ease 16s 1 forwards!important;
+}
+
+@keyframes fadein {
+
+    0% {
+        opacity: 0;
+        scale: 0;
+    }
+    // 20% {
+    //     opacity: 1;
+    // }
+    100% {
+        opacity: 1;
+        scale:1;
+    }
+}
