@@ -9,9 +9,10 @@ import Chart from './components/cryptChart/cryptChart';
 import socketIO from 'socket.io-client';
 
 import { asyncGetCryptAlgoList } from './store/slice/cryptAlgoListSlice';
+import { HostUrl } from './util/app';
 
 
-const socket = socketIO('http://0.0.0.0:3030');
+const socket = socketIO(`${HostUrl}:3030`);
 
 function App() {
   const dispatch: AppDispatch = useDispatch();
