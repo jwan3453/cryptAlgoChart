@@ -50,7 +50,7 @@ const CryptChart = (props: IProps) => {
                  data: []
             },
             yAxis: [{
-                max: () => { return 1000; },
+                max: () => { return 2000; },
                 axisLabel: {
                     formatter: '{value} 次'
                 }
