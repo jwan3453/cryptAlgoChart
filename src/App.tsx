@@ -25,6 +25,10 @@ function App() {
     socket.on('message', (e) => {
       dispatch(setChartData(e as string))
     });
+    socket.on("disconnect", (reason) => {
+      console.log('disconnect:', socket.id, reason); 
+    });
+    
     // setInterval(() => {
     //   setShowDiagram(false);
     // }, 20000);
