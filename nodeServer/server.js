@@ -51,7 +51,7 @@ io.on('connection', socket => {
 server.on('message', (msg, rinfo) => {
     console.log(`udp server got: ${msg} from ${rinfo.address}:${rinfo.port}`);
     if (socketConnection) {
-        socketConnection.emit('message', `${msg}`)
+        socketConnection.broadcast.emit('message', `${msg}`)
     }
 
 });
