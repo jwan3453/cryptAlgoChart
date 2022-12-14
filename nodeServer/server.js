@@ -27,11 +27,11 @@ const io = require("socket.io")(httpServer, {
     }
 });
 
-let socketConnection;
+let socketConnection = [];
 
 io.on('connection', socket => {
     console.log('socket 连接成功');
-    socketConnection = socket;
+    socketConnection.push(socket);
     socket.on('send', e => {
         console.log(e)
         socket.emit('back', '服务器返回的消息')
@@ -50,10 +50,11 @@ io.on('connection', socket => {
 
 server.on('message', (msg, rinfo) => {
     console.log(`udp server got: ${msg} from ${rinfo.address}:${rinfo.port}`);
-    if (socketConnection) {
-        socketConnection.broadcast.emit('message', `${msg}`)
+    if (socketConnection.length > 0) {
+        socketConnection.map((item) => {
+            item.emit('message', `${msg}`)
+        })
     }
-
 });
 
 httpServer.listen(3030);
